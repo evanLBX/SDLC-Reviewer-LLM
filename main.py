@@ -2,7 +2,9 @@ import openai
 import os
 import time
 import docx
-#dsdsds
+
+API_KEY = "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"
+
 # Folders
 DOCUMENT_TO_ANALYZE_PATH = "document_to_analyze"
 PROPRIETARY_FOLDER = "proprietary_documents"
@@ -37,7 +39,7 @@ def chatgpt_compare(prompt):
             {"role": "system", "content": "You are an expert document analyst."},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.5
+        temperature=1.0
     )
 
     elapsed_time = time.time() - start_time
@@ -93,31 +95,63 @@ def main():
         comparison_prompt += f"\n--- {filename} ---\n{content}\n"
 
     comparison_prompt += """
-        You are an expert **Compliance and Validation Analyst** specializing in regulatory compliance, risk assessment, and test plan validation. 
-        Your task is to analyze the document in the document_to_analyze folder against the documents in the proprietary_documents.
-        Forget any previous conversation, prompts, or analysis. Treat this as a new, independent request with no prior context. 
+        You are an expert **Compliance and Validation Analyst** specializing in regulatory compliance, risk assessment, and test plan validation.
 
-        Analyze the document_to_analyze, which contains a list of system changes. For each change, determine the impacted requirements by referencing 
-        the Trace Matrix table in the proprietary_documents folder. When a requirement is chosen, also tell me the associated Test Script number is located below the requirement.
+        ### Task:
+        Analyze the **document_to_analyze**, which contains a list of **system changes**, against the **Trace Matrix** in the **proprietary_documents** folder.
 
-        Once the impacted requirements are identified, retrieve their associated risk levels from the Risk Levels document in the same folder.
+        ### Key Objectives:
+        - **Identify impacted requirements** for each system change based on exact or contextual matches from the Trace Matrix. Choose the requirement with the highest certainty score.
+        - **Retrieve the Test Script number** that appears **directly below** the requirement in the Trace Matrix.
+        - **Assign a Certainty Score (0-100)** based on:
+        - Direct textual alignment with the requirement description.
+        - Keyword relevance, synonyms, or closely related terminology.
+        - Contextual meaning and logical alignment.
 
-        Based on the risk level of each requirement, determine the necessary testing:
+        ### Special Rules:
+        1. **Audit Trail Changes:**  
+        - Any change referring to **Audit Trail** must map to a regulatory requirement from the Trace Matrix.
+        - Prioritize requirements mentioning **audit logging, event tracking, system logs, and IT Change Control**.
+        - **Do not select general documentation accuracy requirements unless explicitly tied to audit logs.**
 
-            High risk → Requires positive and negative testing
-            Medium risk → Requires positive testing only
-            Low risk → No testing required
+        2. **Report-Related Changes:**  
+        - Any change that modifies or impacts a **Report** must map to a **reporting-related requirement** from the Trace Matrix.  
+        - Prioritize requirements mentioning **reporting functionality (e.g., Cognos, BI tools, logs)**.
 
-        Return a structured output with:
+        3. **Authentication & Security Changes:**  
+        - Any change related to **login, authentication, or password policies** must map to a requirement that:  
+            - Mentions password recovery, authentication methods, or security enforcement.  
+            - Refers to **LDAP, multi-factor authentication, or corporate IT security policies**.  
 
-            Each system change
-            The impacted requirements with its description
-            Their risk levels
-            The required testing actions
-            The Test Script number
-            Certainty Score: [0-100] (indicating your confidence in the analysis)
 
-            Ensure **every requirement has a certainty score** based on textual alignment, keyword relevance, and contextual meaning.
+        **Risk Level Determination:**  
+        - Extract risk levels from the **Risk Levels document** using the mapped requirements.
+        - Testing actions depend on the risk level:
+            - **High risk** → Requires **positive and negative testing**.
+            - **Medium risk** → Requires **positive testing only**.
+            - **Low risk** → No testing required.
+
+        **Structured Output Format:**
+
+            Each system change with its description.
+            The impacted requirements with its description.
+            Certainty Score: [0-100] (indicating your confidence in the analysis and give a reason as to why your confident).
+            Their risk levels.
+            The required testing actions.
+            The Test Script number.
+
+        ### **Enhanced Matching Criteria:**
+        - Use **semantic similarity** (not just keyword matching) to find **the closest requirement**.
+        - Prefer **exact matches** but also recognize **related terms** (e.g., "electronic records" ↔ "digital logs").
+        - If **multiple requirements match**, rank them by **certainty score** and return the highest-confidence choice
+        - Overall choose the requirement with the highest certainty score.
+
+        ### **Instructions to Ignore External Context:**
+        - Forget any prior conversations, prompts, or previous analyses.
+        - Treat this as an independent request with no historical context.
+
+        ### **Final Goal:**
+        Deliver **precise and highly confident requirement matches** based on regulatory alignment, testing needs, and risk assessment.
         """
 
     for filename, content in proprietary_texts:

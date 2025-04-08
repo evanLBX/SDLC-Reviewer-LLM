@@ -1,103 +1,174 @@
 ### Compliance Findings (GAMP5 & CSA Standards)
 
-**Issue**: The document does not explicitly mention the need for a Quality Risk Management (QRM) process as part of the validation approach, which is a key principle in GAMP5.  
-**Section**: Validation Approach, Overall Approach  
-**Regulatory Reference**: GAMP5, Chapter 3 - Quality Risk Management  
-**Correction**: Include a section that outlines the QRM process to be followed during the validation of the CMMS, ensuring that risks to patient safety, product quality, and data integrity are systematically assessed and managed.
+1. **Issue:** The document does not clearly define the risk assessment process for the changes being implemented, which is critical for determining the validation approach.
+   - **Section:** Scope
+   - **Regulatory Reference:** GAMP5 Step 1 - Perform Initial Risk Assessment and Determine System Impact
+   - **Correction:** Include a detailed risk assessment section that outlines the process for identifying risks associated with the changes, including the impact on patient safety, product quality, and data integrity .
+
+2. **Issue:** The document lacks a comprehensive description of the assurance activities that will be performed to validate the software changes.
+   - **Section:** Validation Approach
+   - **Regulatory Reference:** CSA - Establishing the Appropriate Record
+   - **Correction:** Specify the assurance activities, including scripted and unscripted testing methods, and document the intended use, risk determination, and testing performed【4:12†source】.
+
+3. **Issue:** The document does not adequately address the need for periodic reviews of the system to ensure ongoing compliance and effectiveness of controls.
+   - **Section:** Risks and Assumptions
+   - **Regulatory Reference:** GAMP5 Step 5 - Review Risks and Monitor Controls
+   - **Correction:** Implement a section that outlines the frequency and criteria for periodic reviews of the system and its controls .
+
+4. **Issue:** The document does not mention the use of a Trace Matrix to ensure that all requirements are tested and validated.
+   - **Section:** Testing Overview
+   - **Regulatory Reference:** GAMP5 - Traceability
+   - **Correction:** Include a Trace Matrix that links user requirements to test cases, ensuring comprehensive coverage of all requirements .
+
+5. **Issue:** The document does not specify the criteria for determining the level of risk associated with each change, which is essential for tailoring the validation effort.
+   - **Section:** Validation Approach
+   - **Regulatory Reference:** CSA - Determining the Risk-Based Approach
+   - **Correction:** Clearly define the criteria for assessing the risk level of each change and how it influences the validation strategy【4:19†source】.
+
+These findings highlight critical compliance gaps that need to be addressed to align with GAMP5 and CSA standards, ensuring that the validation process is robust and meets regulatory expectations.
+
+To analyze the provided document against the Test Plan Template, I will identify any structural and consistency issues, including misaligned or missing headings, incorrect section ordering, and other structural inconsistencies. Below is the report of findings:
+
+### Structural & Consistency Findings
+
+1. **Issue**: Missing Section Headings
+   - **Description**: The document lacks specific section headings that are typically required in a Test Plan Template, such as "Test Objectives," "Test Schedule," and "Test Resources."
+   - **Location**: The entire document.
+   - **Correction**: Add the following headings to align with the Test Plan Template:
+     - Test Objectives
+     - Test Schedule
+     - Test Resources
+
+2. **Issue**: Incorrect Section Ordering
+   - **Description**: The "Testing Overview" section appears before the "Scope" and "Purpose" sections, which is not the standard order in a Test Plan Template.
+   - **Location**: "Testing Overview" section is located before "Scope" and "Purpose."
+   - **Correction**: Move the "Testing Overview" section to follow the "Scope" and "Purpose" sections.
+
+3. **Issue**: Redundant "Risks and Assumptions" Sections
+   - **Description**: There are two separate "Risks and Assumptions" sections, which can lead to confusion.
+   - **Location**: One in the "Scope" section and another in the "Testing Overview."
+   - **Correction**: Consolidate both sections into a single "Risks and Assumptions" section, preferably placed after the "Scope" and "Purpose" sections.
+
+4. **Issue**: Inconsistent Terminology
+   - **Description**: The document uses different terms for similar concepts, such as "Validation Approach" and "Test Strategy," which may confuse readers.
+   - **Location**: "Validation Approach" and "Test Strategy" sections.
+   - **Correction**: Standardize terminology throughout the document. For example, use "Testing Approach" consistently instead of mixing "Validation" and "Testing."
+
+5. **Issue**: Missing Acceptance Criteria for UAT
+   - **Description**: The "User Acceptance Testing" section does not explicitly state the acceptance criteria, which is critical for validation.
+   - **Location**: "User Acceptance Testing" section.
+   - **Correction**: Add a clear statement of acceptance criteria for UAT, similar to those provided for IQ and OQ.
+
+6. **Issue**: Lack of References Section
+   - **Description**: The document does not include a comprehensive references section that lists all relevant documents and standards.
+   - **Location**: End of the document.
+   - **Correction**: Create a "References" section that includes all relevant documents, standards, and guidelines referenced throughout the document.
+
+7. **Issue**: Incomplete Deliverables Section
+   - **Description**: The "Deliverables" section lacks detailed descriptions of each deliverable and their respective approval processes.
+   - **Location**: "Deliverables" section.
+   - **Correction**: Expand the "Deliverables" section to include detailed descriptions and approval processes for each deliverable.
+
+### Summary
+The document requires several structural adjustments to align with the Test Plan Template. Key areas of focus include adding missing headings, correcting section order, consolidating redundant sections, standardizing terminology, and enhancing the clarity of acceptance criteria and deliverables. Implementing these corrections will improve the document's compliance with regulatory standards and enhance its usability for stakeholders.
+
+### System Name Consistency Check Report
+
+**Official System Name:** Computerized Maintenance Management System (CMMS)
+
+#### Inconsistent References Found:
+
+1. **Incorrect Name Used:** CMMS 2024 Bucket Change 1
+   - **Sentence:** "For the Computerized Maintenance Management System (CMMS) 2024 Bucket Change 1 (CHGXXXXX), this combined Test & Validation Plan describes the implementation strategy..."
+   - **Correction:** Replace with "For the Computerized Maintenance Management System (CMMS), this combined Test & Validation Plan describes the implementation strategy..."
+
+2. **Incorrect Name Used:** CHGXXXXX
+   - **Sentence:** "This change (CHGXXXXX) plan outlines the validation process and deliverables required to execute the updates required per change control CHGXXXXX."
+   - **Correction:** Replace with "This change plan outlines the validation process and deliverables required to execute the updates required per change control."
+
+3. **Incorrect Name Used:** CMMS Application Management
+   - **Sentence:** "as some of the updates are covered by item 1 in section 5.9.7 of PRCD-XXXXX (CMMS Application Management)..."
+   - **Correction:** Replace with "as some of the updates are covered by item 1 in section 5.9.7 of PRCD-XXXXX (Computerized Maintenance Management System)."
+
+4. **Incorrect Name Used:** CMMS
+   - **Sentence:** "The primary users of the CMMS are Facilities, Engineering, Manufacturing, Metrology, and Quality Assurance."
+   - **Correction:** Replace with "The primary users of the Computerized Maintenance Management System are Facilities, Engineering, Manufacturing, Metrology, and Quality Assurance."
+
+5. **Incorrect Name Used:** CMMS platform
+   - **Sentence:** "The CMMS platform is accessible to all, but access is limited depending on the user group assigned."
+   - **Correction:** Replace with "The Computerized Maintenance Management System platform is accessible to all, but access is limited depending on the user group assigned."
+
+### Summary
+The document contains several references to the system that do not match the official name "Computerized Maintenance Management System (CMMS)." It is recommended to standardize the terminology throughout the document to maintain consistency and clarity. 
+
+For further details, please refer to the original document sections where these inconsistencies were identified.
+
+### Change Description: Prevent New Users from Taking Active License  
+Chosen Requirement: BR 9.2 (FR 6.8.3)  
+AI Chosen Impacted Requirements:  
+- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 80  
+- UR-REG-34 — The system audit trail must provide secure (not editable), date and time-stamped record of the action (obtained from a secure, reliable source, i.e. the server and not the client PC) and the identity of the operator any time an electronic record is created, modified, or deleted. - Certainty Score: 70  
 
 ---
 
-**Issue**: The document lacks a clear definition of the roles and responsibilities of the validation team, which is essential for compliance with GAMP5 and CSA guidelines.  
-**Section**: Roles  
-**Regulatory Reference**: GAMP5, Section 5.1 - Roles and Responsibilities  
-**Correction**: Clearly define the roles and responsibilities of each team member involved in the validation process, including their specific tasks and authority levels.
+### Change Description: Calibration Standards Tab Update  
+Chosen Requirement: BR 4.3 (FR 6.4.10)  
+AI Chosen Impacted Requirements:  
+- BR 4.51 — The system shall compare the current process settings of each piece of equipment selected in the IEL with the incoming process settings for the new campaign. - Certainty Score: 75  
+- FR 6.4.68 — A settings comparison tab is available on the Equipment Change Request screen. - Certainty Score: 80  
 
 ---
 
-**Issue**: The document does not specify the criteria for determining the risk level of changes, which is necessary for compliance with GAMP5 and CSA standards.  
-**Section**: Risks and Assumptions  
-**Regulatory Reference**: GAMP5, Section 3.2 - Risk Assessment  
-**Correction**: Include a detailed description of how risk levels are determined for each change, referencing the Risk Levels document to ensure consistency and compliance.
+### Change Description: View All Equip Update Requests Screen Updates  
+Chosen Requirement: BR 3.1 (FR 6.3.1)  
+AI Chosen Impacted Requirements:  
+- BR 3.1 — The system shall allow for the creation /modify of equipment, systems, and locations, as well as associated detailed information for each equipment record. - Certainty Score: 90  
+- FR 6.1.13 — The system enables authorized users to generate Bill of Equipment records detailing lists of Equipment validated for use in manufacturing a specific product and the status of the Equipment; as well as to associate the Equipment on the BOE with the attribute settings required by the BOE. - Certainty Score: 85  
 
 ---
 
-**Issue**: The document does not provide a comprehensive approach to defect management, which is critical for ensuring data integrity and compliance.  
-**Section**: Defect Management  
-**Regulatory Reference**: CSA Guidance, Section on Defect Management  
-**Correction**: Expand the defect management section to include procedures for identifying, documenting, and resolving defects, as well as the roles responsible for these activities.
+### Change Description: Audit Trail Report  
+Chosen Requirement: BR 4.50 (FR 6.4.65)  
+AI Chosen Impacted Requirements:  
+- UR-REG-34 — The system audit trail must provide secure (not editable), date and time-stamped record of the action (obtained from a secure, reliable source, i.e. the server and not the client PC) and the identity of the operator any time an electronic record is created, modified, or deleted. - Certainty Score: 90  
+- FR 6.4.65 — The system will be able to pass records of changes made to information on the screen of a work order of any type to an attached ‘Audit Trail Review’ tab. The system will then compile and display the records in an audit trail report in the ‘Audit Trail Review’ tab. - Certainty Score: 95  
 
 ---
 
-### Structural & Consistency Findings (Test Plan Alignment)
-
-**Issue**: The "Definitions, Acronyms, and Abbreviations" section is missing a clear heading and does not follow the template structure.  
-**Location**: Definitions, Acronyms, and Abbreviations  
-**Correction**: Add a clear heading for this section and ensure it is formatted consistently with the Test Plan Template.
-
----
-
-**Issue**: The "Testing Overview" section lacks a detailed description of the testing types and their order, which is required by the Test Plan Template.  
-**Location**: Testing Overview  
-**Correction**: Provide a detailed outline of the testing types (IQ, OQ, UAT) and their sequence, as specified in the Test Plan Template.
+### Change Description: Work Order Report Location Update  
+Chosen Requirement: BR 7.2 (FR 6.1.7)  
+AI Chosen Impacted Requirements:  
+- BR 7.2 — The system shall provide standard reports, as well as the ability for a user to create and save searches. - Certainty Score: 85  
+- FR 6.1.7 — CMMS built-in Cognos reporting functionality will be used for reporting. - Certainty Score: 80  
 
 ---
 
-**Issue**: The "Out of Scope" section is marked as "n/a," which does not align with the Test Plan Template requirements.  
-**Location**: Out of Scope  
-**Correction**: Either provide a relevant description of what is out of scope or remove the section entirely if it is not applicable.
+### Change Description: Forgot Password Button  
+Chosen Requirement: BR 10.1 (FR 6.1.9)  
+AI Chosen Impacted Requirements:  
+- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 75  
+- UR-REG-34 — The system audit trail must provide secure (not editable), date and time-stamped record of the action (obtained from a secure, reliable source, i.e. the server and not the client PC) and the identity of the operator any time an electronic record is created, modified, or deleted. - Certainty Score: 70  
 
 ---
 
-### System Name Consistency Check
-
-**Official System Name**: Computerized Maintenance Management System (CMMS)  
-**Incorrect Usage**:  
-- **Sentence**: "The CMMS platform is accessible to all, but access is limited depending on the user group assigned."  
-- **Incorrect Name**: CMMS  
-- **Correction**: Replace with: Computerized Maintenance Management System (CMMS)
+### Change Description: Audit Trail Spelling Fixes  
+Chosen Requirement: UR-REG-36 (FS-REG-36)  
+AI Chosen Impacted Requirements:  
+- UR-REG-34 — The system audit trail must provide secure (not editable), date and time-stamped record of the action (obtained from a secure, reliable source, i.e. the server and not the client PC) and the identity of the operator any time an electronic record is created, modified, or deleted. - Certainty Score: 90  
+- FS-REG-34 — System shall have the ability to generate a secure audit trail report of the action from application server which must provide the time stamp information’s in non-editable format when a particular action is performed. - Certainty Score: 85  
 
 ---
 
-### System Change & Requirement Validation
-
-**Change Description**: Logic changes are made to the Audit trail reports. The reports will now have a note if the work order comment is greater than 3000 characters.  
-**Chosen Requirement**: BR 4.50 (FR 6.4.65)  
-**AI Chosen Impacted Requirements**:  
-- BR 4.50 — The system shall provide authorized users a method to generate and review audit trail reports of work orders. - Certainty Score: 90  
-- UR-REG-36 — The system must record the creation, change, and cancellation of access authorizations. - Certainty Score: 70  
+### Change Description: See Last Login of User  
+Chosen Requirement: BR 8.1 (FR 6.7.9)  
+AI Chosen Impacted Requirements:  
+- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 80  
+- UR-REG-34 — The system audit trail must provide secure (not editable), date and time-stamped record of the action (obtained from a secure, reliable source, i.e. the server and not the client PC) and the identity of the operator any time an electronic record is created, modified, or deleted. - Certainty Score: 70  
 
 ---
 
-**Change Description**: Edits to R5OBJECTS table to fix spelling errors.  
-**Chosen Requirement**: N/A  
-**AI Chosen Impacted Requirements**:  
-- BR 1.8 — The system shall have the capability to configure field name labels, where appropriate, in order to comply with corporate nomenclature. - Certainty Score: 80  
-- BR 3.1 — The system shall allow for the creation /modify of equipment, systems, and locations, as well as associated detailed information for each equipment record. - Certainty Score: 60  
-
----
-
-**Change Description**: Logic changes made to Work Order Report to change the pointed location at the Work Order and not at the object location.  
-**Chosen Requirement**: BR 4.3 (FR 6.4.10)  
-**AI Chosen Impacted Requirements**:  
-- BR 4.3 — The system shall allow the authorized user to plan, create, reject, review, modify, approve, and cancel work orders against equipment, as well as locations. - Certainty Score: 95  
-- FR 6.4.10 — The system will allow authorized users to plan, create, review, reject, modify, approve, and cancel work orders and work requests for equipment and/or locations. - Certainty Score: 90  
-
----
-
-**Change Description**: Add visible field to display last login of a user.  
-**Chosen Requirement**: BR 8.1 (FR 6.7.9)  
-**AI Chosen Impacted Requirements**:  
-- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 85  
-- FR 6.7.9 — The system will allow configuration of a field to provide the last date and time a user has accessed the system. - Certainty Score: 90  
-
----
-
-**Change Description**: Remove logic that automatically makes a new user have an active license.  
-**Chosen Requirement**: BR 9.2 (FR 6.8.3)  
-**AI Chosen Impacted Requirements**:  
-- BR 9.2 — The system will create requestor user accounts by integrating into active directory. - Certainty Score: 80  
-- FR 6.8.3 — The system will be capable of integrating with the authoritative source of employee and contractor data for access to corporate employee record information. - Certainty Score: 75  
-
---- 
-
-This report provides a structured analysis of compliance, structural consistency, system name usage, and system change validation based on the provided documents. Each section is designed to ensure clarity and precision for regulatory review.
+### Change Description: ECDB Menu Modifications  
+Chosen Requirement: BR 8.1 (FR 6.7.2)  
+AI Chosen Impacted Requirements:  
+- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 80  
+- FR 6.1.13 — The system enables authorized users to generate Bill of Equipment records detailing lists of Equipment validated for use in manufacturing a specific product and the status of the Equipment; as well as to associate the Equipment on the BOE with the attribute settings required by the BOE. - Certainty Score: 75  

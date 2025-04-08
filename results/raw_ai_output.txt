@@ -1,0 +1,103 @@
+### Compliance Findings (GAMP5 & CSA Standards)
+
+**Issue**: The document does not explicitly mention the need for a Quality Risk Management (QRM) process as part of the validation approach, which is a key principle in GAMP5.  
+**Section**: Validation Approach, Overall Approach  
+**Regulatory Reference**: GAMP5, Chapter 3 - Quality Risk Management  
+**Correction**: Include a section that outlines the QRM process to be followed during the validation of the CMMS, ensuring that risks to patient safety, product quality, and data integrity are systematically assessed and managed.
+
+---
+
+**Issue**: The document lacks a clear definition of the roles and responsibilities of the validation team, which is essential for compliance with GAMP5 and CSA guidelines.  
+**Section**: Roles  
+**Regulatory Reference**: GAMP5, Section 5.1 - Roles and Responsibilities  
+**Correction**: Clearly define the roles and responsibilities of each team member involved in the validation process, including their specific tasks and authority levels.
+
+---
+
+**Issue**: The document does not specify the criteria for determining the risk level of changes, which is necessary for compliance with GAMP5 and CSA standards.  
+**Section**: Risks and Assumptions  
+**Regulatory Reference**: GAMP5, Section 3.2 - Risk Assessment  
+**Correction**: Include a detailed description of how risk levels are determined for each change, referencing the Risk Levels document to ensure consistency and compliance.
+
+---
+
+**Issue**: The document does not provide a comprehensive approach to defect management, which is critical for ensuring data integrity and compliance.  
+**Section**: Defect Management  
+**Regulatory Reference**: CSA Guidance, Section on Defect Management  
+**Correction**: Expand the defect management section to include procedures for identifying, documenting, and resolving defects, as well as the roles responsible for these activities.
+
+---
+
+### Structural & Consistency Findings (Test Plan Alignment)
+
+**Issue**: The "Definitions, Acronyms, and Abbreviations" section is missing a clear heading and does not follow the template structure.  
+**Location**: Definitions, Acronyms, and Abbreviations  
+**Correction**: Add a clear heading for this section and ensure it is formatted consistently with the Test Plan Template.
+
+---
+
+**Issue**: The "Testing Overview" section lacks a detailed description of the testing types and their order, which is required by the Test Plan Template.  
+**Location**: Testing Overview  
+**Correction**: Provide a detailed outline of the testing types (IQ, OQ, UAT) and their sequence, as specified in the Test Plan Template.
+
+---
+
+**Issue**: The "Out of Scope" section is marked as "n/a," which does not align with the Test Plan Template requirements.  
+**Location**: Out of Scope  
+**Correction**: Either provide a relevant description of what is out of scope or remove the section entirely if it is not applicable.
+
+---
+
+### System Name Consistency Check
+
+**Official System Name**: Computerized Maintenance Management System (CMMS)  
+**Incorrect Usage**:  
+- **Sentence**: "The CMMS platform is accessible to all, but access is limited depending on the user group assigned."  
+- **Incorrect Name**: CMMS  
+- **Correction**: Replace with: Computerized Maintenance Management System (CMMS)
+
+---
+
+### System Change & Requirement Validation
+
+**Change Description**: Logic changes are made to the Audit trail reports. The reports will now have a note if the work order comment is greater than 3000 characters.  
+**Chosen Requirement**: BR 4.50 (FR 6.4.65)  
+**AI Chosen Impacted Requirements**:  
+- BR 4.50 — The system shall provide authorized users a method to generate and review audit trail reports of work orders. - Certainty Score: 90  
+- UR-REG-36 — The system must record the creation, change, and cancellation of access authorizations. - Certainty Score: 70  
+
+---
+
+**Change Description**: Edits to R5OBJECTS table to fix spelling errors.  
+**Chosen Requirement**: N/A  
+**AI Chosen Impacted Requirements**:  
+- BR 1.8 — The system shall have the capability to configure field name labels, where appropriate, in order to comply with corporate nomenclature. - Certainty Score: 80  
+- BR 3.1 — The system shall allow for the creation /modify of equipment, systems, and locations, as well as associated detailed information for each equipment record. - Certainty Score: 60  
+
+---
+
+**Change Description**: Logic changes made to Work Order Report to change the pointed location at the Work Order and not at the object location.  
+**Chosen Requirement**: BR 4.3 (FR 6.4.10)  
+**AI Chosen Impacted Requirements**:  
+- BR 4.3 — The system shall allow the authorized user to plan, create, reject, review, modify, approve, and cancel work orders against equipment, as well as locations. - Certainty Score: 95  
+- FR 6.4.10 — The system will allow authorized users to plan, create, review, reject, modify, approve, and cancel work orders and work requests for equipment and/or locations. - Certainty Score: 90  
+
+---
+
+**Change Description**: Add visible field to display last login of a user.  
+**Chosen Requirement**: BR 8.1 (FR 6.7.9)  
+**AI Chosen Impacted Requirements**:  
+- BR 8.1 — The system shall provide security to allow or disallow functionality on the system level, site level, and user level. - Certainty Score: 85  
+- FR 6.7.9 — The system will allow configuration of a field to provide the last date and time a user has accessed the system. - Certainty Score: 90  
+
+---
+
+**Change Description**: Remove logic that automatically makes a new user have an active license.  
+**Chosen Requirement**: BR 9.2 (FR 6.8.3)  
+**AI Chosen Impacted Requirements**:  
+- BR 9.2 — The system will create requestor user accounts by integrating into active directory. - Certainty Score: 80  
+- FR 6.8.3 — The system will be capable of integrating with the authoritative source of employee and contractor data for access to corporate employee record information. - Certainty Score: 75  
+
+--- 
+
+This report provides a structured analysis of compliance, structural consistency, system name usage, and system change validation based on the provided documents. Each section is designed to ensure clarity and precision for regulatory review.

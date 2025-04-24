@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"     # ← exposes container’s 5000 on your machine’s 5000
+    env_file:
+      - .env
+    environment:
+      - CHROMA_TELEMETRY_ENABLED=false
+    volumes:
+      - ./proprietary_documents:/app/proprietary_documents

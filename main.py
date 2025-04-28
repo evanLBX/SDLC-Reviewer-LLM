@@ -158,7 +158,10 @@ def ingest_trace_matrix():
 
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)
-CORS(app, origins=["https://sdlc-reviewer.azurewebsites.net/"])
+CORS(app, origins=[
+  "https://sdlc-reviewer.azurewebsites.net",
+  "https://salmon-grass-0f9532c0f.6.azurestaticapps.net"
+])
 
 # 💾 Save plain text to .docx
 def save_to_docx(text, output_path):
